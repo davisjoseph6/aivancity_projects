@@ -57,7 +57,6 @@ pip install -r requirements.txt
 Do not commit `aids_original_data.csv`. Scripts will try:
 
 1. `./aids_original_data.csv`
-
 2. `./data/aids_original_data.csv`
 
 If not found, they auto-download from the public GitHub URL into `./data/.`
@@ -80,7 +79,6 @@ python explore_visualize_aids.py
 #### Outputs (committed)
 
 - `step1_and_step2/outputs/figs/*.png`
-
 - `step1_and_step2/outputs/csv/*.csv`
 
 ### Step 3 (Risk Analysis) — R
@@ -94,17 +92,13 @@ source("step3_visual_analysis_EN.R")
 This will:
 
 - Build an sdcMicro object with QIs = age, gender, race
-
 - Print global risk, expected re-IDs, % unique, % with k ≤ 5
-
 - Check attribute disclosure (arms → treat)
-
 - Save minimal outputs with plain-language captions:
 
 #### Outputs (committed)
 
 - `outputs/plots/*.png`
-
 - `outputs/csv/*.csv`
 
 If your R working directory is different (e.g., Documents), adjust the script’s output path or move the files into the repo before committing.
@@ -118,11 +112,8 @@ python step4_anonymization.py
 #### Outputs (committed)
 
 - `step4/step4_results_summary.csv`
-
 - `step4/step4_plot_risk_by_method.png`
-
 - `step4/step4_plot_utility_by_method.png`
-
 - `step4/step4_plot_risk_utility_tradeoff.png`
 
 ### 5) Commit & push outputs
@@ -137,12 +128,37 @@ git commit -m "Update generated outputs"
 git push
 ```
 
+### Step 6 (Use case demonstration) — Python
+```bash
+cd step_6
+python step6_use_case.py
+```
+
+#### Outputs:
+
+- PNG: `step6_coefficients_comparison.png`, `step6_roc_curves.png`, `step6_subgroup_rates_by_ageband.png`
+- CSV: `step6_model_metrics.csv`, `step6_feature_effects.csv`, `step6_subgroup_summary.csv`
+
+### Interpretation:
+
+- If AUC/Brier are close between original and anonymized, anonymization preserved predictive utility.
+- Similar coefficients → relationships preserved.
+- Similar age-band rates → subgroup conclusions preserved.
+
+yaml
+Copy code
+
+---
+
+#### Robustness checks you can run quickly
+- Different thresholds for response (e.g., cd420 ≥ 400) to show conclusions aren’t threshold-sensitive.
+- Alternative coarsening (5-year vs 15-year bands) to illustrate the privacy–utility continuum in this use case.
+- Train/test split (or CV) so metrics reflect generalization (the Step 6 script fits and evaluates in-sample to keep dependencies minimal).
+
 ### 6) Reproducibility notes
 
 - PRAM randomness is controlled by a fixed seed inside the scripts.
-
 - Python & R versions pinned (see requirements.txt and CRAN defaults).
-
 - Capture R session info if needed:
 
 ```r
@@ -151,21 +167,17 @@ sessionInfo()
 
 ### 7) Interpreting key metrics (quick)
 - Risk: % unique, % with k ≤ 5, expected re-IDs (lower is safer).
-
 - Utility: IL1 (overall change; lower is better), Eigenvalue similarity (structural similarity; higher is better).
-
 - Best trade-off found: 10-year age banding (large risk drop, small IL1).
 
 ### 8) Troubleshooting
 - Missing Python packages → activate .venv and pip install -r requirements.txt.
-
 - R can’t find sdcMicro → run install.packages("sdcMicro", repos = "https://cloud.r-project.org").
-
 - Outputs not appearing → check terminal “SAVED:” lines for exact paths.
-
-* On Windows, if statsmodels errors, ensure you have recent VC++ Build Tools or stick to the pinned versions.
+- On Windows, if statsmodels errors, ensure you have recent VC++ Build Tools or stick to the pinned versions.
 
 ### 9) Security note
 - Do not release both arms and treat together (deterministic attribute disclosure).
-
 - Prefer 10-year age bands; consider 15-year bands for tighter privacy targets.
+
+
