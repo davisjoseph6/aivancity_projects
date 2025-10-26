@@ -1,0 +1,17 @@
+variable,level,count
+race,0,1522
+race,1,617
+gender,1,1771
+gender,0,368
+homo,1,1414
+homo,0,725
+hemo,0,1959
+hemo,1,180
+drugs,0,1858
+drugs,1,281
+treat,1,1607
+treat,0,532
+arms,3,561
+arms,0,532
+arms,2,524
+arms,1,522

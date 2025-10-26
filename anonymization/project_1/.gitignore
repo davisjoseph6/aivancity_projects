@@ -1,0 +1,48 @@
+# --- Python virtual envs ---
+.venv/
+venv/
+ENV/
+env/
+
+# --- Python build / cache ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+.build/
+dist/
+pip-wheel-metadata/
+*.log
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+
+# --- IDE / editor artifacts ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- OS cruft ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Data files (do not commit raw data) ---
+aids_original_data.csv
+*.csv:Zone.Identifier
+
+# --- R artifacts ---
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# --- Misc ---
+*.tmp
+*.bak
+*.swp
+*.swo
+

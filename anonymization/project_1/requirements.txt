@@ -1,0 +1,12 @@
+# Core
+numpy>=2.2,<2.3
+pandas>=2.2,<2.3
+
+# Plotting
+matplotlib>=3.8,<3.11
+seaborn>=0.13.2,<0.14
+
+# Stats / mosaic plot
+scipy>=1.14.1,<1.15
+statsmodels>=0.14.3,<0.15
+

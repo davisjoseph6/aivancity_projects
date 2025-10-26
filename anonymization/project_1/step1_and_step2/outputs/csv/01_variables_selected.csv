@@ -1,0 +1,13 @@
+variable,role,sensitive
+arms,categorical,no
+drugs,categorical,yes
+gender,categorical,yes
+hemo,categorical,yes
+homo,categorical,yes
+race,categorical,yes
+treat,categorical,no
+age,continuous,no
+cd40,continuous,yes
+cd420,continuous,yes
+cd496,continuous,yes
+wtkg,continuous,no

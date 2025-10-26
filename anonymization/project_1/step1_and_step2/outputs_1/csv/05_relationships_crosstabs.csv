@@ -1,0 +1,13 @@
+pair,gender,race,count,homo,arms
+gender_vs_race,0,0,155,,
+gender_vs_race,0,1,213,,
+gender_vs_race,1,0,1367,,
+gender_vs_race,1,1,404,,
+homo_vs_arms,,,191,0,0
+homo_vs_arms,,,176,0,1
+homo_vs_arms,,,176,0,2
+homo_vs_arms,,,182,0,3
+homo_vs_arms,,,341,1,0
+homo_vs_arms,,,346,1,1
+homo_vs_arms,,,348,1,2
+homo_vs_arms,,,379,1,3

@@ -1,0 +1,13 @@
+variable,inferred_type,sensitive_flag,n_missing,pct_missing,n_unique
+age,continuous,0,0,0.0,59
+arms,categorical,0,0,0.0,4
+cd40,continuous,1,0,0.0,484
+cd420,continuous,1,0,0.0,570
+cd496,continuous,1,797,37.26,534
+drugs,categorical,1,0,0.0,2
+gender,categorical,1,0,0.0,2
+hemo,categorical,1,0,0.0,2
+homo,categorical,1,0,0.0,2
+race,categorical,1,0,0.0,2
+treat,categorical,0,0,0.0,2
+wtkg,continuous,0,0,0.0,667

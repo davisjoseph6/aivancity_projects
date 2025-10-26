@@ -1,0 +1,8 @@
+"keys","pct_unique","median_k","pct_k_le_T"
+"age",0.09,90,2.15
+"gender",0,1771,0
+"race",0,1522,0
+"age+gender",0.56,56,5
+"age+race",0.37,42,5.47
+"gender+race",0,1367,0
+"age+gender+race",1.36,33,10.52
