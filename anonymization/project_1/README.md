@@ -166,6 +166,6 @@ sessionInfo()
 * On Windows, if statsmodels errors, ensure you have recent VC++ Build Tools or stick to the pinned versions.
 
 ### 9) Security note
-Do not release both arms and treat together (deterministic attribute disclosure).
+- Do not release both arms and treat together (deterministic attribute disclosure).
 
-Prefer 10-year age bands; consider 15-year bands for tighter privacy targets.
+- Prefer 10-year age bands; consider 15-year bands for tighter privacy targets.
